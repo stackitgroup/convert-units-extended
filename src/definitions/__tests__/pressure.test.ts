@@ -94,6 +94,28 @@ test('torr to ksi', () => {
   expect(convert(51714.931860168974).from('torr').to('ksi')).toBeCloseTo(1);
 });
 
+test('in w.c to ksi', () => {
+  const convert = configureMeasurements<
+    'pressure',
+    PressureSystems,
+    PressureUnits
+  >({
+    pressure,
+  });
+  expect(convert(80).from('in w.c').to('ksi')).toBeCloseTo(80 / 27707.6);
+});
+
+test('ksi to in w.c', () => {
+  const convert = configureMeasurements<
+    'pressure',
+    PressureSystems,
+    PressureUnits
+  >({
+    pressure,
+  });
+  expect(convert(7).from('ksi').to('in w.c')).toBeCloseTo(7 * 27707.6);
+});
+
 test('psi to hPa', () => {
   const convert = configureMeasurements<
     'pressure',

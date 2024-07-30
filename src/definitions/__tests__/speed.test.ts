@@ -57,6 +57,20 @@ test('ft/s to ft/min', () => {
   expect(convert(1).from('ft/s').to('ft/min')).toBeCloseTo(60);
 });
 
+test('ft/min to km/h', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(100).from('ft/min').to('km/h')).toBeCloseTo(1.8288);
+});
+
+test('km/h to ft/min', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(10).from('km/h').to('ft/min')).toBeCloseTo(546.81);
+});
+
 test('m/s to ft/min', () => {
   const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
     speed,

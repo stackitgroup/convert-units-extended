@@ -11,7 +11,7 @@ export type PressureMetricUnits =
   | 'torr'
   | 'mH2O'
   | 'mmHg';
-export type PressureImperialUnits = 'psi' | 'ksi' | 'inHg';
+export type PressureImperialUnits = 'psi' | 'ksi' | 'inHg' | 'in w.c';
 
 const metric: Record<PressureMetricUnits, Unit> = {
   Pa: {
@@ -93,6 +93,13 @@ const imperial: Record<PressureImperialUnits, Unit> = {
       plural: 'Inches of mercury',
     },
     to_anchor: 0.000491154,
+  },
+  'in w.c': {
+    name: {
+      singular: 'Inch of Water Column',
+      plural: 'Inches of Water Column',
+    },
+    to_anchor: 1 / 27707.6,
   },
 };
 
