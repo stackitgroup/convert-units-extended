@@ -40,6 +40,10 @@ import massFlowRate, {
 } from './massFlowRate.js';
 import pace, { PaceSystems, PaceUnits } from './pace.js';
 import partsPer, { PartsPerSystems, PartsPerUnits } from './partsPer.js';
+import partsPerArea, {
+  PartsPerAreaSystems,
+  PartsPerAreaUnits,
+} from './partsPerArea.js';
 import pieces, { PiecesSystems, PiecesUnits } from './pieces.js';
 import power, { PowerSystems, PowerUnits } from './power.js';
 import pressure, { PressureSystems, PressureUnits } from './pressure.js';
@@ -75,6 +79,7 @@ export type AllMeasuresSystems =
   | CurrencyPerAreaSystems
   | ApparentPowerSystems
   | AreaSystems
+  | PartsPerAreaSystems
   | ChargeSystems
   | VentilationRateSystems
   | EnergyConsumptionPerAreaSystems
@@ -117,6 +122,7 @@ export type AllMeasuresUnits =
   | CurrentUnits
   | DigitalUnits
   | EachUnits
+  | PartsPerAreaUnits
   | EnergyUnits
   | ForceUnits
   | FrequencyUnits
@@ -146,6 +152,7 @@ export type AllMeasures =
   | 'area'
   | 'charge'
   | 'ventilationRate'
+  | 'partsPerArea'
   | 'energyConsumptionPerArea'
   | 'heatingCoolingDegreeDays'
   | 'current'
@@ -182,6 +189,7 @@ const allMeasures: Record<
   currencyPerArea,
   angle,
   apparentPower,
+  partsPerArea,
   area,
   charge,
   ventilationRate,

@@ -1,6 +1,6 @@
 {
-  "name": "convert-units",
-  "version": "3.0.0-beta.6",
+  "name": "convert-units-extended-stackit",
+  "version": "1.0.1",
   "description": "Convert between quantities in different units",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -68,6 +68,13 @@
     "ratio",
     "fraction"
   ],
-  "author": "Ben Ng <me@benng.me> (http://benng.me)",
+  "author": "Stack IT <accounts@stackitgroup.com> (https://stackitgroup.com)",
+  "contributors": [
+    {
+      "name": "Ben Ng",
+      "email": "me@benng.me",
+      "url": "http://benng.me"
+    }
+  ],
   "license": "MIT"
 }

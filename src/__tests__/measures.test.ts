@@ -34,6 +34,7 @@ test('measures', () => {
       'massFlowRate',
       'pace',
       'partsPer',
+      'partsPerArea',
       'pieces',
       'power',
       'pressure',
