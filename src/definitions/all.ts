@@ -10,6 +10,7 @@ import apparentPower, {
 } from './apparentPower.js';
 import area, { AreaSystems, AreaUnits } from './area.js';
 import charge, { ChargeSystems, ChargeUnits } from './charge.js';
+import currency, { CurrencySystems, CurrencyUnits } from './currency.js';
 import currencyPerArea, {
   CurrencyPerAreaSystems,
   CurrencyPerAreaUnits,
@@ -85,6 +86,7 @@ export type AllMeasuresSystems =
   | EnergyConsumptionPerAreaSystems
   | HeatingCoolingDegreeDaysSystems
   | CurrentSystems
+  | CurrencySystems
   | DigitalSystems
   | EachSystems
   | EnergySystems
@@ -123,6 +125,7 @@ export type AllMeasuresUnits =
   | DigitalUnits
   | EachUnits
   | PartsPerAreaUnits
+  | CurrencyUnits
   | EnergyUnits
   | ForceUnits
   | FrequencyUnits
@@ -169,6 +172,7 @@ export type AllMeasures =
   | 'pace'
   | 'partsPer'
   | 'pieces'
+  | 'currency'
   | 'power'
   | 'pressure'
   | 'reactiveEnergy'
@@ -201,6 +205,7 @@ const allMeasures: Record<
   energy,
   force,
   frequency,
+  currency,
   illuminance,
   length,
   mass,

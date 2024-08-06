@@ -18,6 +18,7 @@ test('measures', () => {
       'apparentPower',
       'area',
       'charge',
+      'currency',
       'currencyPerArea',
       'energyConsumptionPerArea',
       'heatingCoolingDegreeDays',
