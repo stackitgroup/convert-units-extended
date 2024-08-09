@@ -39,7 +39,7 @@ export type VolumeFlowRateImperialUnits =
   | 'gal/min'
   | 'gal/h'
   | 'ft3/s'
-  | 'ft3/min'
+  | 'cfm'
   | 'ft3/h'
   | 'yd3/s'
   | 'yd3/min'
@@ -273,7 +273,7 @@ const imperial: Record<VolumeFlowRateImperialUnits, Unit> = {
     },
     to_anchor: 957.506,
   },
-  'ft3/min': {
+  cfm: {
     name: {
       singular: 'Cubic foot per minute',
       plural: 'Cubic feet per minute',

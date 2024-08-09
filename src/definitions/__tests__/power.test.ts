@@ -85,6 +85,20 @@ test('W to MW', () => {
   expect(convert(1).from('W').to('MW')).toBe(0.000001);
 });
 
+test('kW to Btu/h', () => {
+  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
+    power,
+  });
+  expect(convert(20).from('kW').to('Btu/h')).toBeCloseTo(50333.33);
+});
+
+test('kW to Ton', () => {
+  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
+    power,
+  });
+  expect(convert(764).from('kW').to('ton')).toBeCloseTo(217.2396);
+});
+
 test('W to GW', () => {
   const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
     power,

@@ -31,7 +31,8 @@ export type VolumeImperialUnits =
   | 'qt'
   | 'gal'
   | 'ft3'
-  | 'yd3';
+  | 'yd3'
+  | 'ccf';
 
 const metric: Record<VolumeMetricUnits, Unit> = {
   mm3: {
@@ -227,6 +228,13 @@ const imperial: Record<VolumeImperialUnits, Unit> = {
       plural: 'Cubic yards',
     },
     to_anchor: 25852.7,
+  },
+  ccf: {
+    name: {
+      singular: 'Hundred Cubic Feet',
+      plural: 'Hundred Cubic Feet',
+    },
+    to_anchor: 100 * 957.506,
   },
 };
 

@@ -15,6 +15,13 @@ test('mm3 to l', () => {
   expect(convert(1000000).from('mm3').to('l')).toBe(1);
 });
 
+test('gal to ccf', () => {
+  const convert = configureMeasurements<'volume', VolumeSystems, VolumeUnits>({
+    volume,
+  });
+  expect(convert(20).from('gal').to('ccf')).toBeCloseTo(0.0267);
+});
+
 test('cm3 to l', () => {
   const convert = configureMeasurements<'volume', VolumeSystems, VolumeUnits>({
     volume,
