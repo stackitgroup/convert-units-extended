@@ -459,6 +459,7 @@ test('energy possibilities', () => {
   const actual = convert().possibilities('energy'),
     expected = [
       'Ws',
+      'kBtu',
       'Wm',
       'Wh',
       'mWh',
@@ -947,6 +948,7 @@ test('all possibilities', () => {
       'W',
       'week',
       'Ws',
+      'kBtu',
       'Wm',
       'Wh',
       'yd',

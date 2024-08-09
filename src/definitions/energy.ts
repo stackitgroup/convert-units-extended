@@ -13,7 +13,8 @@ export type EnergySIUnits =
   | 'J'
   | 'kJ'
   | 'MJ'
-  | 'GJ';
+  | 'GJ'
+  | 'kBtu';
 
 export type EnergyNutritionUnits = 'kcal' | 'cal';
 
@@ -24,6 +25,13 @@ const SI: Record<EnergySIUnits, Unit> = {
       plural: 'Watt-seconds',
     },
     to_anchor: 1,
+  },
+  kBtu: {
+    name: {
+      singular: 'kilo British thermal unit',
+      plural: 'kilo British thermal units',
+    },
+    to_anchor: 1055056,
   },
   Wm: {
     name: {

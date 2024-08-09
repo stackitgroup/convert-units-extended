@@ -1,7 +1,35 @@
 import configureMeasurements from '../..';
 import energy, { EnergySystems, EnergyUnits } from '../energy';
 
-test('Ws to Ws', () => {
+test('kJ to kBtu', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(2000).from('kJ').to('kBtu')).toBeCloseTo(1.895635241);
+});
+
+test('kJ to kBtu', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(2000).from('kJ').to('kBtu')).toBeCloseTo(1.895635241);
+});
+
+test('kWh to kBtu', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(100).from('kWh').to('kBtu')).toBeCloseTo(341.214);
+});
+
+test('GJ to kBtu', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(5).from('GJ').to('kBtu')).toBeCloseTo(4739.085602);
+});
+
+test('Ws to kBtu', () => {
   const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
     energy,
   });
