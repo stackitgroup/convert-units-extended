@@ -4,8 +4,22 @@ export type CurrencyPerAreaUnits =
   | CurrencyPerAreaImperialUnits;
 export type CurrencyPerAreaSystems = 'metric' | 'imperial';
 
-export type CurrencyPerAreaMetricUnits = 'USD/mm2' | 'USD/cm2' | 'USD/m2';
-export type CurrencyPerAreaImperialUnits = 'USD/in2' | 'USD/yd2' | 'USD/ft2';
+export type CurrencyPerAreaMetricUnits =
+  | 'USD/mm2'
+  | 'USD/cm2'
+  | 'USD/m2'
+  | 'EUR/m2'
+  | 'GBP/m2'
+  | 'AUD/m2'
+  | 'CAD/m2';
+export type CurrencyPerAreaImperialUnits =
+  | 'USD/in2'
+  | 'USD/yd2'
+  | 'USD/ft2'
+  | 'EUR/ft2'
+  | 'GBP/ft2'
+  | 'AUD/ft2'
+  | 'CAD/ft2';
 
 const metric: Record<CurrencyPerAreaMetricUnits, Unit> = {
   'USD/m2': {
@@ -14,6 +28,34 @@ const metric: Record<CurrencyPerAreaMetricUnits, Unit> = {
       plural: 'Dollar Square Meters',
     },
     to_anchor: 1,
+  },
+  'AUD/m2': {
+    name: {
+      singular: 'Dollar per Square Meter',
+      plural: 'Dollar Square Meters',
+    },
+    to_anchor: 1 / 1.4647936838096354,
+  },
+  'EUR/m2': {
+    name: {
+      singular: 'Dollar per Square Meter',
+      plural: 'Dollar Square Meters',
+    },
+    to_anchor: 1 / 0.9968797663313828,
+  },
+  'CAD/m2': {
+    name: {
+      singular: 'Dollar per Square Meter',
+      plural: 'Dollar Square Meters',
+    },
+    to_anchor: 1 / 1.3146823727387462,
+  },
+  'GBP/m2': {
+    name: {
+      singular: 'Dollar per Square Meter',
+      plural: 'Dollar Square Meters',
+    },
+    to_anchor: 1 / 0.8629616845012081,
   },
   'USD/cm2': {
     name: {
@@ -38,6 +80,34 @@ const imperial: Record<CurrencyPerAreaImperialUnits, Unit> = {
       plural: 'Square Inches',
     },
     to_anchor: 1 / 144,
+  },
+  'AUD/ft2': {
+    name: {
+      singular: 'Dollar per Square Meter',
+      plural: 'Dollar Square Meters',
+    },
+    to_anchor: 1 / 1.4647936838096354,
+  },
+  'EUR/ft2': {
+    name: {
+      singular: 'Dollar per Square Meter',
+      plural: 'Dollar Square Meters',
+    },
+    to_anchor: 1 / 0.9968797663313828,
+  },
+  'CAD/ft2': {
+    name: {
+      singular: 'Dollar per Square Meter',
+      plural: 'Dollar Square Meters',
+    },
+    to_anchor: 1 / 1.3146823727387462,
+  },
+  'GBP/ft2': {
+    name: {
+      singular: 'Dollar per Square Meter',
+      plural: 'Dollar Square Meters',
+    },
+    to_anchor: 1 / 0.8629616845012081,
   },
   'USD/ft2': {
     name: {
