@@ -18,6 +18,11 @@ import currencyPerArea, {
 import current, { CurrentSystems, CurrentUnits } from './current.js';
 import digital, { DigitalSystems, DigitalUnits } from './digital.js';
 import each, { EachSystems, EachUnits } from './each.js';
+import emissions, { EmissionsSystems, EmissionsUnits } from './emissions.js';
+import emissionsFactors, {
+  EmissionsFactorsSystems,
+  EmissionsFactorsUnits,
+} from './emissionsFactors.js';
 import energy, { EnergySystems, EnergyUnits } from './energy.js';
 import energyConsumptionPerArea, {
   EnergyConsumptionPerAreaSystems,
@@ -104,6 +109,8 @@ export type AllMeasuresSystems =
   | PartsPerSystems
   | PiecesSystems
   | PowerSystems
+  | EmissionsSystems
+  | EmissionsFactorsSystems
   | PowerDensitySystems
   | PressureSystems
   | ReactiveEnergySystems
@@ -127,6 +134,8 @@ export type AllMeasuresUnits =
   | EnergyConsumptionPerAreaUnits
   | HeatingCoolingDegreeDaysUnits
   | CurrentUnits
+  | EmissionsUnits
+  | EmissionsFactorsUnits
   | DigitalUnits
   | EachUnits
   | PartsPerAreaUnits
@@ -189,6 +198,8 @@ export type AllMeasures =
   | 'temperature'
   | 'time'
   | 'voltage'
+  | 'emissions'
+  | 'emissionsFactors'
   | 'volume'
   | 'volumeFlowRate';
 
@@ -206,6 +217,8 @@ const allMeasures: Record<
   ventilationRate,
   energyConsumptionPerArea,
   heatingCoolingDegreeDays,
+  emissions,
+  emissionsFactors,
   current,
   digital,
   each,

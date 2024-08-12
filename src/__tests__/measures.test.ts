@@ -18,6 +18,8 @@ test('measures', () => {
       'apparentPower',
       'area',
       'charge',
+      'emissions',
+      'emissionsFactors',
       'currency',
       'currencyPerArea',
       'energyConsumptionPerArea',
