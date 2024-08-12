@@ -4,7 +4,10 @@ export type EnergyConsumptionPerAreaUnits =
   | EnergyConsumptionPerAreaImperialUnits;
 export type EnergyConsumptionPerAreaSystems = 'metric' | 'imperial';
 
-export type EnergyConsumptionPerAreaMetricUnits = 'kWh/m2' | 'kWh/cm2';
+export type EnergyConsumptionPerAreaMetricUnits =
+  | 'kWh/m2'
+  | 'kWh/cm2'
+  | 'GJ/m2';
 export type EnergyConsumptionPerAreaImperialUnits =
   | 'kWh/ft2'
   | 'kWh/in2'
@@ -16,7 +19,14 @@ const metric: Record<EnergyConsumptionPerAreaMetricUnits, Unit> = {
       singular: 'Kilo-watt-hour per Square Meter',
       plural: 'Kilo-watt-hours per Square Meters',
     },
-    to_anchor: 1, // Unidad base
+    to_anchor: 1,
+  },
+  'GJ/m2': {
+    name: {
+      singular: 'Giga-Joule per Square Meter',
+      plural: 'Giga-Joules per Square Meters',
+    },
+    to_anchor: 1 / 0.0036,
   },
   'kWh/cm2': {
     name: {

@@ -36,6 +36,41 @@ test('Ws to kBtu', () => {
   expect(convert(1).from('Ws').to('Ws')).toBe(1);
 });
 
+test('Ws to Btu', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(10).from('Ws').to('Btu')).toBe(0.00947817);
+});
+
+test('Btu to MMBtu', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(1000000).from('Btu').to('MMBtu')).toBe(1);
+});
+
+test('Ws to Therms', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(400).from('Ws').to('Therms')).toBeCloseTo(0.000003792174);
+});
+
+test('Ws to klbs', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(400).from('Ws').to('klbs')).toBeCloseTo(295.02485972);
+});
+
+test('Ws to Ton-hours', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(16).from('Ws').to('Ton-hours')).toBeCloseTo(0.0000012608);
+});
+
 test('Ws to Wm', () => {
   const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
     energy,

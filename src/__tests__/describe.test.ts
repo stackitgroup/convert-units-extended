@@ -33,21 +33,6 @@ test('get ac', () => {
   expect(actual).toEqual(expected);
 });
 
-test('get PS', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  const actual = convert().describe('PS'),
-    expected = {
-      abbr: 'PS',
-      measure: 'power',
-      system: 'metric',
-      singular: 'Horsepower (metric)',
-      plural: 'Horsepower (metric)',
-    };
-  expect(actual).toEqual(expected);
-});
-
 test('get hp', () => {
   const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
     power,

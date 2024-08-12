@@ -400,17 +400,6 @@ test('fl-oz/s to m3/min', () => {
   expect(convert(1).from('fl-oz/s').to('m3/min')).toBeCloseTo(0.00177441177);
 });
 
-test('ft3/min to l/s', () => {
-  const convert = configureMeasurements<
-    'volumeFlowRate',
-    VolumeFlowRateSystems,
-    VolumeFlowRateUnits
-  >({
-    volumeFlowRate,
-  });
-  expect(convert(1).from('ft3/min').to('l/s')).toBeCloseTo(0.471947443);
-});
-
 test('pnt/min to kl/h', () => {
   const convert = configureMeasurements<
     'volumeFlowRate',

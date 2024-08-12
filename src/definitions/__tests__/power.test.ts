@@ -8,13 +8,6 @@ test('W to W', () => {
   expect(convert(1).from('W').to('W')).toBe(1);
 });
 
-test('mW to mW', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('mW').to('mW')).toBe(1);
-});
-
 test('kW to kW', () => {
   const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
     power,
@@ -29,46 +22,11 @@ test('MW to MW', () => {
   expect(convert(1).from('MW').to('MW')).toBe(1);
 });
 
-test('GW to GW', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('GW').to('GW')).toBe(1);
-});
-
-test('PS to PS', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('PS').to('PS')).toBe(1);
-});
-
-test('Btu/s to Btu/s', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('Btu/s').to('Btu/s')).toBe(1);
-});
-
-test('ft-lb/s to ft-lb/s', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('ft-lb/s').to('ft-lb/s')).toBe(1);
-});
-
 test('hp to hp', () => {
   const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
   expect(convert(1).from('hp').to('hp')).toBe(1);
-});
-
-test('W to mW', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('W').to('mW')).toBe(1000);
 });
 
 test('W to kW', () => {
@@ -89,56 +47,15 @@ test('kW to Btu/h', () => {
   const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
-  expect(convert(20).from('kW').to('Btu/h')).toBeCloseTo(50333.33);
+  expect(convert(20).from('kW').to('Btu/h')).toBeCloseTo(68242.71619728001);
 });
 
 test('kW to Ton', () => {
   const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
-  expect(convert(764).from('kW').to('ton')).toBeCloseTo(217.2396);
-});
 
-test('W to GW', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('W').to('GW')).toBe(0.000000001);
-});
-
-test('GW to mW', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('GW').to('mW')).toBe(1000000000000);
-});
-
-test('MW to mW', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('MW').to('mW')).toBe(1000000000);
-});
-
-test('kW to mW', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('kW').to('mW')).toBe(1000000);
-});
-
-test('mW to kW', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('mW').to('kW')).toBe(0.000001);
-});
-
-test('mW to W', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
-    power,
-  });
-  expect(convert(1).from('mW').to('W')).toBe(0.001);
+  expect(convert(20).from('kW').to('ton')).toBeCloseTo(5.6888);
 });
 
 test('kW to W', () => {
@@ -148,23 +65,44 @@ test('kW to W', () => {
   expect(convert(1).from('kW').to('W')).toBe(1000);
 });
 
-test('PS to W', () => {
+test('W to hp', () => {
   const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
-  expect(convert(1).from('PS').to('W')).toBe(735.49875);
+  expect(convert(20).from('W').to('hp')).toBeCloseTo(0.0268204);
 });
 
-test('hp to ft-lb/s', () => {
+test('hp to W', () => {
   const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
-  expect(convert(1).from('hp').to('ft-lb/s')).toBe(550);
+  expect(convert(40).from('hp').to('W')).toBeCloseTo(29828.04);
 });
 
-test('Btu/s to ft-lb/s', () => {
+test('hp to ton', () => {
   const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
-  expect(convert(1).from('Btu/s').to('ft-lb/s')).toBe(778.16937);
+  expect(convert(40).from('hp').to('ton')).toBeCloseTo(8.4814441);
+});
+
+test('ton to hp', () => {
+  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
+    power,
+  });
+  expect(convert(10).from('ton').to('hp')).toBeCloseTo(47.161773471);
+});
+
+test('hp to Btu/h', () => {
+  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
+    power,
+  });
+  expect(convert(30).from('hp').to('Btu/h')).toBeCloseTo(76332.997);
+});
+
+test('Btu/h to hp', () => {
+  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
+    power,
+  });
+  expect(convert(970).from('Btu/h').to('hp')).toBeCloseTo(0.38122439);
 });

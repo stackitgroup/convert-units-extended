@@ -38,6 +38,7 @@ test('measures', () => {
       'partsPerArea',
       'pieces',
       'power',
+      'powerDensity',
       'pressure',
       'reactiveEnergy',
       'reactivePower',

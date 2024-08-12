@@ -14,7 +14,12 @@ export type EnergySIUnits =
   | 'kJ'
   | 'MJ'
   | 'GJ'
-  | 'kBtu';
+  | 'kBtu'
+  | 'Btu'
+  | 'MMBtu'
+  | 'Therms'
+  | 'klbs'
+  | 'Ton-hours';
 
 export type EnergyNutritionUnits = 'kcal' | 'cal';
 
@@ -25,6 +30,41 @@ const SI: Record<EnergySIUnits, Unit> = {
       plural: 'Watt-seconds',
     },
     to_anchor: 1,
+  },
+  Btu: {
+    name: {
+      singular: 'British thermal unit',
+      plural: 'British thermal units',
+    },
+    to_anchor: 1 / 0.000947817,
+  },
+  MMBtu: {
+    name: {
+      singular: 'Million British thermal unit',
+      plural: 'Million British thermal units',
+    },
+    to_anchor: (1 / 0.000947817) * 1_000_000,
+  },
+  Therms: {
+    name: {
+      singular: 'Therm',
+      plural: 'Therms',
+    },
+    to_anchor: 1 / 0.0000000094804,
+  },
+  klbs: {
+    name: {
+      singular: 'Kilo-pound Force',
+      plural: 'Kilo-pounds Force',
+    },
+    to_anchor: 1 / 0.7375621493,
+  },
+  'Ton-hours': {
+    name: {
+      singular: 'Ton-hour',
+      plural: 'Ton-hours',
+    },
+    to_anchor: 1 / 0.0000000789,
   },
   kBtu: {
     name: {

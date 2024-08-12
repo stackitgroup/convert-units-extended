@@ -52,6 +52,18 @@ test('kBtu/ft2 to kWh/ft2', () => {
   expect(convert(10).from('kBtu/ft2').to('kWh/ft2')).toBeCloseTo(10 * 0.293071);
 });
 
+test('kWh/m2 to GJ/m2', () => {
+  const convert = configureMeasurements<
+    'energyConsumptionPerArea',
+    EnergyConsumptionPerAreaSystems,
+    EnergyConsumptionPerAreaUnits
+  >({
+    energyConsumptionPerArea,
+  });
+
+  expect(convert(18).from('kWh/m2').to('GJ/m2')).toBeCloseTo(0.0648);
+});
+
 test('kBtu/ft2 to kWh/m2', () => {
   const convert = configureMeasurements<
     'energyConsumptionPerArea',

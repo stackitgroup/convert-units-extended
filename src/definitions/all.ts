@@ -47,6 +47,10 @@ import partsPerArea, {
 } from './partsPerArea.js';
 import pieces, { PiecesSystems, PiecesUnits } from './pieces.js';
 import power, { PowerSystems, PowerUnits } from './power.js';
+import powerDensity, {
+  PowerDensitySystems,
+  PowerDensityUnits,
+} from './powerDensity.js';
 import pressure, { PressureSystems, PressureUnits } from './pressure.js';
 import reactiveEnergy, {
   ReactiveEnergySystems,
@@ -100,6 +104,7 @@ export type AllMeasuresSystems =
   | PartsPerSystems
   | PiecesSystems
   | PowerSystems
+  | PowerDensitySystems
   | PressureSystems
   | ReactiveEnergySystems
   | ReactivePowerSystems
@@ -137,6 +142,7 @@ export type AllMeasuresUnits =
   | PartsPerUnits
   | PiecesUnits
   | PowerUnits
+  | PowerDensityUnits
   | PressureUnits
   | ReactiveEnergyUnits
   | ReactivePowerUnits
@@ -174,6 +180,7 @@ export type AllMeasures =
   | 'pieces'
   | 'currency'
   | 'power'
+  | 'powerDensity'
   | 'pressure'
   | 'reactiveEnergy'
   | 'reactivePower'
@@ -214,6 +221,7 @@ const allMeasures: Record<
   partsPer,
   pieces,
   power,
+  powerDensity,
   pressure,
   reactiveEnergy,
   reactivePower,

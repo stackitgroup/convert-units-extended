@@ -2,8 +2,8 @@ import { Measure, Unit } from './../index.js';
 export type PowerUnits = PowerMetricUnits | PowerImperialUnits;
 export type PowerSystems = 'metric' | 'imperial';
 
-export type PowerMetricUnits = 'W' | 'mW' | 'kW' | 'MW' | 'GW' | 'PS';
-export type PowerImperialUnits = 'Btu/s' | 'ft-lb/s' | 'hp' | 'Btu/h' | 'ton';
+export type PowerMetricUnits = 'W' | 'kW' | 'MW';
+export type PowerImperialUnits = 'hp' | 'Btu/h' | 'ton';
 
 const metric: Record<PowerMetricUnits, Unit> = {
   W: {
@@ -12,13 +12,6 @@ const metric: Record<PowerMetricUnits, Unit> = {
       plural: 'Watts',
     },
     to_anchor: 1,
-  },
-  mW: {
-    name: {
-      singular: 'Milliwatt',
-      plural: 'Milliwatts',
-    },
-    to_anchor: 0.001,
   },
   kW: {
     name: {
@@ -34,57 +27,29 @@ const metric: Record<PowerMetricUnits, Unit> = {
     },
     to_anchor: 1000000,
   },
-  GW: {
-    name: {
-      singular: 'Gigawatt',
-      plural: 'Gigawatts',
-    },
-    to_anchor: 1000000000,
-  },
-  PS: {
-    name: {
-      singular: 'Horsepower (metric)',
-      plural: 'Horsepower (metric)',
-    },
-    to_anchor: 735.49875,
-  },
 };
 
 const imperial: Record<PowerImperialUnits, Unit> = {
-  'Btu/s': {
-    name: {
-      singular: 'British thermal unit per second',
-      plural: 'British thermal units per second',
-    },
-    to_anchor: 778.16937,
-  },
-  'ft-lb/s': {
-    name: {
-      singular: 'Foot-pound per second',
-      plural: 'Foot-pounds per second',
-    },
-    to_anchor: 1,
-  },
   hp: {
     name: {
       singular: 'Horsepower (British)',
       plural: 'Horsepower (British)',
     },
-    to_anchor: 550,
+    to_anchor: 1,
   },
   'Btu/h': {
     name: {
       singular: 'British thermal unit per hour',
       plural: 'British thermal units per hour',
     },
-    to_anchor: 0.29307107,
+    to_anchor: 1 / 2544.4332,
   },
   ton: {
     name: {
       singular: 'Ton of refrigeration',
       plural: 'Tons of refrigeration',
     },
-    to_anchor: 2737.18, // en ft-lb/s
+    to_anchor: 1 / 0.2120361,
   },
 };
 
@@ -96,12 +61,12 @@ const measure: Measure<PowerSystems, PowerUnits> = {
   anchors: {
     metric: {
       imperial: {
-        ratio: 0.737562149,
+        ratio: 0.00134102,
       },
     },
     imperial: {
       metric: {
-        ratio: 1 / 0.737562149,
+        ratio: 1 / 0.00134102,
       },
     },
   },
