@@ -142,12 +142,22 @@ type CurrencySIUnits =
   | 'ILS'
   | 'JPY'
   | 'KZT'
+  | 'CHF'
+  | 'CNY'
   | 'ZMW';
 
 const SI: Record<CurrencySIUnits, Unit> = {
   USD: {
     name: { singular: 'US Dollar', plural: 'US Dollars' },
     to_anchor: 1.0,
+  },
+  CHF: {
+    name: { singular: 'Swiss Franc', plural: 'Swiss Francs' },
+    to_anchor: 0.98,
+  },
+  CNY: {
+    name: { singular: 'Yuan Renminbi', plural: 'Yuans Renminbi' },
+    to_anchor: 6.89,
   },
   CAD: {
     name: { singular: 'Canadian Dollar', plural: 'Canadian Dollars' },

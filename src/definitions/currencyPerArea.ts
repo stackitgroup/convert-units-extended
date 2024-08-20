@@ -5,15 +5,6 @@ export type CurrencyPerAreaUnits =
   | CurrencyPerAreaImperialUnits;
 export type CurrencyPerAreaSystems = 'metric' | 'imperial';
 
-// !USD
-// !CAD
-// !EUR
-// !GBP
-// !AUD
-// *JPY
-// *SGD
-// *INR
-
 export type CurrencyPerAreaMetricUnits =
   | 'USD/mm2'
   | 'USD/cm2'
@@ -24,6 +15,8 @@ export type CurrencyPerAreaMetricUnits =
   | 'CAD/m2'
   | 'JPY/m2'
   | 'SGD/m2'
+  | 'CNY/m2'
+  | 'CHF/m2'
   | 'INR/m2';
 export type CurrencyPerAreaImperialUnits =
   | 'USD/in2'
@@ -35,6 +28,8 @@ export type CurrencyPerAreaImperialUnits =
   | 'CAD/ft2'
   | 'JPY/ft2'
   | 'SGD/ft2'
+  | 'CNY/ft2'
+  | 'CHF/ft2'
   | 'INR/ft2';
 
 const metric: Record<CurrencyPerAreaMetricUnits, Unit> = {
@@ -44,6 +39,20 @@ const metric: Record<CurrencyPerAreaMetricUnits, Unit> = {
       plural: 'Dollar Square Meters',
     },
     to_anchor: 1,
+  },
+  'CNY/m2': {
+    name: {
+      singular: 'Yuan Renminbi per Foot',
+      plural: 'Yuans Renminbi per Foot',
+    },
+    to_anchor: 0.98,
+  },
+  'CHF/m2': {
+    name: {
+      singular: 'Swiss Franc per Foot',
+      plural: 'Swiss Franc per Feet',
+    },
+    to_anchor: 6.89,
   },
   'AUD/m2': {
     name: {
@@ -117,6 +126,20 @@ const imperial: Record<CurrencyPerAreaImperialUnits, Unit> = {
       plural: 'Square Inches',
     },
     to_anchor: 1 / 144,
+  },
+  'CNY/ft2': {
+    name: {
+      singular: 'Yuan Renminbi per Foot',
+      plural: 'Yuans Renminbi per Feet',
+    },
+    to_anchor: 0.98,
+  },
+  'CHF/ft2': {
+    name: {
+      singular: 'Swiss Franc per Foot',
+      plural: 'Swiss Francs per Feet',
+    },
+    to_anchor: 6.89,
   },
   'AUD/ft2': {
     name: {
