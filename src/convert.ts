@@ -116,7 +116,7 @@ export class Converter<
     // You can't go from liquid to mass, for example
     if (destination.measure != origin.measure) {
       throw new Error(
-        `Cannot convert incompatible measures of ${destination.measure} and ${origin.measure}`
+        `Cannot convert incompatible measures of ${destination.measure} and ${origin.measure}. ${origin.measure} -> ${destination.measure}`
       );
     }
 
