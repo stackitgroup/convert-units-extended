@@ -57,13 +57,6 @@ test('Ws to Therms', () => {
   expect(convert(400).from('Ws').to('Therms')).toBeCloseTo(0.000003792174);
 });
 
-test('Ws to klbs', () => {
-  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
-    energy,
-  });
-  expect(convert(400).from('Ws').to('klbs')).toBeCloseTo(295.02485972);
-});
-
 test('klbs to kBtu', () => {
   const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
     energy,

@@ -1,6 +1,6 @@
 {
   "name": "convert-units-extended-stackit",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Convert between quantities in different units",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
