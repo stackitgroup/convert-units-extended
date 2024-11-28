@@ -71,6 +71,13 @@ test('klbs to kBtu', () => {
   expect(convert(5555).from('klbs').to('kBtu')).toBe(5555000);
 });
 
+test('kBtu to klbs', () => {
+  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+    energy,
+  });
+  expect(convert(40000).from('kBtu').to('klbs')).toBe(40);
+});
+
 test('Ws to Ton-hours', () => {
   const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
     energy,
