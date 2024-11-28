@@ -57,7 +57,7 @@ const SI: Record<EnergySIUnits, Unit> = {
       singular: 'Kilo-pound Force',
       plural: 'Kilo-pounds Force',
     },
-    to_anchor: 1 / 0.7375621493,
+    to_anchor: 1055056000,
   },
   'Ton-hours': {
     name: {
